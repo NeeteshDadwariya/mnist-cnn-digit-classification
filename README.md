@@ -12,3 +12,5 @@ Streamlit web app can be run via the below command
 `streamlit run webapp.py`
 
 Below is the working screenshot of the webapp:
+
+![Inference Pipeline](/images/streamlit-inference-pipeline.png?raw=true)
