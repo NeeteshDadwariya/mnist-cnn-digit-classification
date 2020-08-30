@@ -22,7 +22,7 @@ The network contains one input layer and 2 hidden layers to reduce the image dim
 The last layer constitutes of the softmax-activation function as this returns a probability distribution over the target classes in a multiclass classification problem. In our case, the activation classes are limited to 0-9 each representing one digit. 
 
 # Inference Pipeline
-For the inference pipeline, streamlit web application has been et up.
+For the inference pipeline, streamlit web application has been set up. The application code can be found at [webapp.py](webapp.py)
 
 Streamlit web app can be run via the below commands
 
