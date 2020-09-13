@@ -107,8 +107,12 @@ class DigitClassifier:
         '''
 
         for key, value in changes_to_w.items():
-            for w_arr in self.params[key]:
-                w_arr -= self.l_rate * value
+            w_arr = self.params[key]
+            w_arr -= self.l_rate * value
+            self.params[key] = w_arr
+
+            # for w_arr in self.params[key]:
+            #     w_arr -= self.l_rate * value
 
     def compute_accuracy(self, x_test, y_test):
         '''
@@ -133,6 +137,7 @@ class DigitClassifier:
             for x, y in zip(x_train, y_train):
                 output = self.forward_pass(x)
                 changes_to_w = self.backward_pass(y, output)
+                print(f"changes_to_w={changes_to_w}")
                 self.update_network_parameters(changes_to_w)
 
             accuracy = self.compute_accuracy(x_test, y_test)
