@@ -2,7 +2,6 @@ import numpy as np
 import time
 import matplotlib.pylab as plt
 
-
 def show_image(x, dim_x, dim_y, title=""):
     plt.gray()
     plt.matshow(x.reshape(dim_x, dim_y))
@@ -111,9 +110,6 @@ class DigitClassifier:
             w_arr -= self.l_rate * value
             self.params[key] = w_arr
 
-            # for w_arr in self.params[key]:
-            #     w_arr -= self.l_rate * value
-
     def compute_accuracy(self, x_test, y_test):
         '''
             This function does a forward pass of x, then checks if the indices
@@ -125,7 +121,6 @@ class DigitClassifier:
         for x, y in zip(x_test, y_test):
             output = self.forward_pass(x)
             pred = np.argmax(output)
-            #print(f"Expected = {y}, Predicted = {pred}")
             predictions.append(pred == y)
 
         summed = sum(pred for pred in predictions) / 100.0
